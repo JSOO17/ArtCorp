@@ -53,7 +53,7 @@ namespace ArtCorp.Domain.Tests.UserUsecases
         }
 
         [TestMethod]
-        public async void GetUser_ArgumentNull()
+        public async Task GetUser_ArgumentNull()
         {
             var mockUserPersistence = new Mock<IUserPersistencePort>();
             var mockUserEncrypt = new Mock<IUserEncryptPort>();
@@ -70,7 +70,7 @@ namespace ArtCorp.Domain.Tests.UserUsecases
         }
 
         [TestMethod]
-        public async void GetUser_InvalidLoginEmailIncorrect()
+        public async Task GetUser_InvalidLoginEmailIncorrect()
         {
             var login = new LoginModel
             {
@@ -91,8 +91,6 @@ namespace ArtCorp.Domain.Tests.UserUsecases
 
             var useCases = new Usecases.UserUsecases(mockUserPersistence.Object, mockUserEncrypt.Object);
 
-            var model = await useCases.GetUser(login);
-
             var e = await Assert.ThrowsExceptionAsync<InvalidLoginException>(async () =>
             {
                 await useCases.GetUser(login);
@@ -105,7 +103,7 @@ namespace ArtCorp.Domain.Tests.UserUsecases
         }
 
         [TestMethod]
-        public async void GetUser_InvalidLoginPasswordIncorrect()
+        public async Task GetUser_InvalidLoginPasswordIncorrect()
         {
             var login = new LoginModel
             {
@@ -134,8 +132,6 @@ namespace ArtCorp.Domain.Tests.UserUsecases
                 });
 
             var useCases = new Usecases.UserUsecases(mockUserPersistence.Object, mockUserEncrypt.Object);
-
-            var model = await useCases.GetUser(login);
 
             var e = await Assert.ThrowsExceptionAsync<InvalidLoginException>(async () =>
             {
