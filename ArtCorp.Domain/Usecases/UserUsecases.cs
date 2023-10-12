@@ -15,11 +15,6 @@ namespace ArtCorp.Domain.Usecases
             _userEncryptPort = userEncryptPort;
         }
 
-        public Task<UserModel?> GetUser(string email)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<UserModel> GetUser(LoginModel login)
         {
             throw new NotImplementedException();

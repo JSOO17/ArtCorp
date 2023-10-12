@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Infrastructure.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Infrastructure.Security", "ArtCorp.Infrastructure.Security\ArtCorp.Infrastructure.Security.csproj", "{8EBDF648-4E7E-4A77-B580-BFBB6964898F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3489CCB9-2C1E-4942-B7BA-BC297FCC85B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Domain.Tests", "ArtCorp.Domain.Tests\ArtCorp.Domain.Tests.csproj", "{7209F08F-6DA6-4306-B14E-0203E7D60B5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{8EBDF648-4E7E-4A77-B580-BFBB6964898F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EBDF648-4E7E-4A77-B580-BFBB6964898F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EBDF648-4E7E-4A77-B580-BFBB6964898F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7209F08F-6DA6-4306-B14E-0203E7D60B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7209F08F-6DA6-4306-B14E-0203E7D60B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7209F08F-6DA6-4306-B14E-0203E7D60B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7209F08F-6DA6-4306-B14E-0203E7D60B5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7209F08F-6DA6-4306-B14E-0203E7D60B5D} = {3489CCB9-2C1E-4942-B7BA-BC297FCC85B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {175A7F54-B119-4949-853A-57108716E166}
