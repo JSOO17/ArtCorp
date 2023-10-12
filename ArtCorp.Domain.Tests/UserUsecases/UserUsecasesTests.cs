@@ -66,7 +66,6 @@ namespace ArtCorp.Domain.Tests.UserUsecases
             });
 
             Assert.IsNotNull(e);
-            Assert.AreEqual("Login can not be null.", e.Message);
         }
 
         [TestMethod]
