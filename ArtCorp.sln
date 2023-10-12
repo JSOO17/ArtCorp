@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Infrastructure.API", "ArtCorp\ArtCorp.Infrastructure.API.csproj", "{7AAE440F-A986-475A-9FD3-E97DC2D071B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtCorp.Infrastructure.API", "ArtCorp\ArtCorp.Infrastructure.API.csproj", "{7AAE440F-A986-475A-9FD3-E97DC2D071B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Application", "ArtCorp.Application\ArtCorp.Application.csproj", "{781659F3-81D3-43B5-B864-BDB888251747}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtCorp.Application", "ArtCorp.Application\ArtCorp.Application.csproj", "{781659F3-81D3-43B5-B864-BDB888251747}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Domain", "ArtCorp.Domain\ArtCorp.Domain.csproj", "{36379844-7D45-48C3-9D73-2FA0927B2379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtCorp.Domain", "ArtCorp.Domain\ArtCorp.Domain.csproj", "{36379844-7D45-48C3-9D73-2FA0927B2379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Infrastructure.Data", "ArtCorp.Infrastructure.Data\ArtCorp.Infrastructure.Data.csproj", "{A71CEBDA-B71C-4FD0-86C6-9CF2AEAAF653}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtCorp.Infrastructure.Data", "ArtCorp.Infrastructure.Data\ArtCorp.Infrastructure.Data.csproj", "{A71CEBDA-B71C-4FD0-86C6-9CF2AEAAF653}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Infrastructure.Security", "ArtCorp.Infrastructure.Security\ArtCorp.Infrastructure.Security.csproj", "{8EBDF648-4E7E-4A77-B580-BFBB6964898F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtCorp.Infrastructure.Security", "ArtCorp.Infrastructure.Security\ArtCorp.Infrastructure.Security.csproj", "{8EBDF648-4E7E-4A77-B580-BFBB6964898F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3489CCB9-2C1E-4942-B7BA-BC297FCC85B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Domain.Tests", "ArtCorp.Domain.Tests\ArtCorp.Domain.Tests.csproj", "{7209F08F-6DA6-4306-B14E-0203E7D60B5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtCorp.Domain.Tests", "ArtCorp.Domain.Tests\ArtCorp.Domain.Tests.csproj", "{7209F08F-6DA6-4306-B14E-0203E7D60B5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtCorp.Application.Tests", "ArtCorp.Application.Tests\ArtCorp.Application.Tests.csproj", "{88DD5F3F-DE4D-4027-8142-141577AFFE3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,12 +49,17 @@ Global
 		{7209F08F-6DA6-4306-B14E-0203E7D60B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7209F08F-6DA6-4306-B14E-0203E7D60B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7209F08F-6DA6-4306-B14E-0203E7D60B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DD5F3F-DE4D-4027-8142-141577AFFE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DD5F3F-DE4D-4027-8142-141577AFFE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DD5F3F-DE4D-4027-8142-141577AFFE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DD5F3F-DE4D-4027-8142-141577AFFE3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7209F08F-6DA6-4306-B14E-0203E7D60B5D} = {3489CCB9-2C1E-4942-B7BA-BC297FCC85B8}
+		{88DD5F3F-DE4D-4027-8142-141577AFFE3C} = {3489CCB9-2C1E-4942-B7BA-BC297FCC85B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {175A7F54-B119-4949-853A-57108716E166}
