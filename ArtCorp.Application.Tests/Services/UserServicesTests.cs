@@ -1,4 +1,5 @@
 using ArtCorp.Application.Sevices;
+using ArtCorp.Domain.Interfaces.API;
 using ArtCorp.Domain.Interfaces.SPI;
 using ArtCorp.Domain.Models;
 using Moq;
@@ -11,13 +12,13 @@ namespace ArtCorp.Application.Tests.Services
         [TestMethod]
         public async Task GetUser_SuccessfullAsync()
         {
-            var mockUserPersistence = new Mock<IUserPersistencePort>();
+            var mockUserUsecases= new Mock<IUserUsecases>();
 
-            var userServices = new UserServices(mockUserPersistence.Object);
+            var userServices = new UserServices(mockUserUsecases.Object);
 
-            mockUserPersistence
-                .Setup(p => p.GetUser(It.IsAny<string>()))
-                .Returns(Task.FromResult<UserModel?>(new UserModel()
+            mockUserUsecases
+                .Setup(p => p.GetUser(It.IsAny<LoginModel>()))
+                .ReturnsAsync(new UserModel()
                 {
                     Name = "Pepito",
                     Lastname = "Perezz",
@@ -26,7 +27,7 @@ namespace ArtCorp.Application.Tests.Services
                     Email = "user@gmail.com",
                     Password = "fajgrnvia",
                     RoleId = 2
-                }));
+                });
 
             var userReponse = await userServices.GetUser("pepito@gmail.com", "pass");
 

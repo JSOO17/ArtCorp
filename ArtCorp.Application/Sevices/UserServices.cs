@@ -1,26 +1,26 @@
 ﻿using ArtCorp.Application.DTO.Request;
 using ArtCorp.Application.DTO.Response;
 using ArtCorp.Application.Sevices.Interfaces;
-using ArtCorp.Domain.Interfaces.SPI;
+using ArtCorp.Domain.Interfaces.API;
 
 namespace ArtCorp.Application.Sevices
 {
     public class UserServices : IUserServices
     {
-        private IUserPersistencePort _userServices;
-        public UserServices(IUserPersistencePort userServicesPort)
+        private IUserUsecases _userUsecases;
+        public UserServices(IUserUsecases userUsecases)
         {
-            _userServices = userServicesPort;
+            _userUsecases = userUsecases;
         }
 
-        public Task<UserResponse> CreateUser(UserRequest userRequest, string identityRoleId)
+        public async Task<UserResponse> CreateUser(UserRequest userRequest, string identityRoleId)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
-        public Task<UserResponse?> GetUser(string email, string password)
+        public async Task<UserResponse?> GetUser(string email, string password)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }
