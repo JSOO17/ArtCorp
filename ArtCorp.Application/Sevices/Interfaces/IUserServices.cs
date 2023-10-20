@@ -6,6 +6,6 @@ namespace ArtCorp.Application.Sevices.Interfaces
     public interface IUserServices
     {
         Task<UserResponse> CreateUser(UserRequest userRequest, string identityRoleId);
-        Task<UserResponse?> GetUser(string email, string password);
+        Task<UserResponse> GetUser(string email, string password);
     }
 }

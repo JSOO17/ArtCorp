@@ -1,7 +1,9 @@
 ﻿using ArtCorp.Application.DTO.Request;
 using ArtCorp.Application.DTO.Response;
+using ArtCorp.Application.Mappers;
 using ArtCorp.Application.Sevices.Interfaces;
 using ArtCorp.Domain.Interfaces.API;
+using ArtCorp.Domain.Models;
 
 namespace ArtCorp.Application.Sevices
 {
@@ -18,9 +20,15 @@ namespace ArtCorp.Application.Sevices
             return null;
         }
 
-        public async Task<UserResponse?> GetUser(string email, string password)
+        public async Task<UserResponse> GetUser(string email, string password)
         {
-            return null;
+            var userModel = await _userUsecases.GetUser(new LoginModel
+            {
+                Email = email,
+                Password = password
+            });
+
+            return UserMapper.ToUserResponse(userModel);
         }
     }
 }

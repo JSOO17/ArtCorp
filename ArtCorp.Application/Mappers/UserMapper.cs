@@ -23,7 +23,7 @@ namespace ArtCorp.Application.Mappers
             var mapper = new Mapper(config);
 
             return mapper.Map<LoginRequest, LoginModel>(user);
-        }.
+        }
 
         public static UserModel ToUser(UserRequest user)
         {

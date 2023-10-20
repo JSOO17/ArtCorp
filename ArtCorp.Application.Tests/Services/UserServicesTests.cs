@@ -1,6 +1,5 @@
 using ArtCorp.Application.Sevices;
 using ArtCorp.Domain.Interfaces.API;
-using ArtCorp.Domain.Interfaces.SPI;
 using ArtCorp.Domain.Models;
 using Moq;
 
