@@ -2,13 +2,26 @@
 {
     public class UserResponse
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public string Lastname { get; set; }
-        public int DNI { get; set; }
-        public string Email { get; set; }
-        public string Cellphone { get; set; }
-        public string Password { get; set; }
+        public int Id { get; set; }
+
+        public string Username { get; set; } = null!;
+
+        public string Names { get; set; } = null!;
+
+        public string Lastnames { get; set; } = null!;
+
+        public string TypeDocument { get; set; } = null!;
+
+        public string Document { get; set; } = null!;
+
         public int RoleId { get; set; }
+
+        public string Avatar { get; set; } = null!;
+
+        public string Email { get; set; } = null!;
+
+        public string Cellphone { get; set; } = null!;
+
+        public string Password { get; set; } = null!;
     }
 }

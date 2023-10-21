@@ -1,7 +1,9 @@
 using ArtCorp.Application.Sevices;
 using ArtCorp.Domain.Interfaces.API;
 using ArtCorp.Domain.Models;
+using ArtCorp.Domain.Utils;
 using Moq;
+using System.Reflection;
 
 namespace ArtCorp.Application.Tests.Services
 {
@@ -19,24 +21,29 @@ namespace ArtCorp.Application.Tests.Services
                 .Setup(p => p.GetUser(It.IsAny<LoginModel>()))
                 .ReturnsAsync(new UserModel()
                 {
-                    Name = "Pepito",
-                    Lastname = "Perezz",
-                    DNI = 3314,
+                    Names = "Pepito",
+                    Lastnames = "Perezz",
+                    Document = "3314",
+                    Avatar = "image.png",
+                    TypeDocument = TypesDocument.CedulaExtranjeria,
+                    Username = "pepitoyaki",
                     Cellphone = "+341341",
                     Email = "user@gmail.com",
-                    Password = "fajgrnvia",
+                    Password = "ff",
                     RoleId = 2
                 });
 
             var userReponse = await userServices.GetUser("pepito@gmail.com", "pass");
 
             Assert.IsNotNull(userReponse);
-            Assert.AreEqual("Pepito", userReponse.Name);
-            Assert.AreEqual("Perezz", userReponse.Lastname);
-            Assert.AreEqual("user@gmail.com", userReponse.Email);
-            Assert.AreEqual("fajgrnvia", userReponse.Password);
+            Assert.AreEqual("Pepito", userReponse.Names);
+            Assert.AreEqual("Perezz", userReponse.Lastnames);
+            Assert.AreEqual("3314", userReponse.Document);
+            Assert.AreEqual("image.png", userReponse.Avatar);
+            Assert.AreEqual(TypesDocument.CedulaExtranjeria, userReponse.TypeDocument);
             Assert.AreEqual("+341341", userReponse.Cellphone);
-            Assert.AreEqual(3314, userReponse.DNI);
+            Assert.AreEqual("user@gmail.com", userReponse.Email);
+            Assert.AreEqual("ff", userReponse.Password);
             Assert.AreEqual(2, userReponse.RoleId);
         }
     }

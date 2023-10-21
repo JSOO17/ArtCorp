@@ -2,6 +2,7 @@ using ArtCorp.Domain.Exceptions;
 using ArtCorp.Domain.Interfaces.SPI;
 using ArtCorp.Domain.Models;
 using ArtCorp.Domain.Usecases;
+using ArtCorp.Domain.Utils;
 using Moq;
 
 namespace ArtCorp.Domain.Tests.UserUsecases
@@ -29,9 +30,12 @@ namespace ArtCorp.Domain.Tests.UserUsecases
                 .Setup(p => p.GetUser(It.IsAny<string>()))
                 .ReturnsAsync(new UserModel
                 {
-                    Name = "Pepito",
-                    Lastname = "Perezz",
-                    DNI = 3314,
+                    Names = "Pepito",
+                    Lastnames = "Perezz",
+                    Document = "3314",
+                    Avatar = "image.png",
+                    TypeDocument = "CE",
+                    Username = "pepitoyaki",
                     Cellphone = "+341341",
                     Email = "user@gmail.com",
                     Password = "ff",
@@ -43,9 +47,11 @@ namespace ArtCorp.Domain.Tests.UserUsecases
             var model = await useCases.GetUser(login);
 
             Assert.IsNotNull(model);
-            Assert.AreEqual("Pepito", model.Name);
-            Assert.AreEqual("Perezz", model.Lastname);
-            Assert.AreEqual(3314, model.DNI);
+            Assert.AreEqual("Pepito", model.Names);
+            Assert.AreEqual("Perezz", model.Lastnames);
+            Assert.AreEqual("3314", model.Document);
+            Assert.AreEqual("image.png", model.Avatar);
+            Assert.AreEqual("CE", model.TypeDocument);
             Assert.AreEqual("+341341", model.Cellphone);
             Assert.AreEqual("user@gmail.com", model.Email);
             Assert.AreEqual("ff", model.Password);
@@ -121,9 +127,12 @@ namespace ArtCorp.Domain.Tests.UserUsecases
                 .Setup(p => p.GetUser(It.IsAny<string>()))
                 .ReturnsAsync(new UserModel
                 {
-                    Name = "Pepito",
-                    Lastname = "Perezz",
-                    DNI = 3314,
+                    Names = "Pepito",
+                    Lastnames = "Perezz",
+                    Document = "3314",
+                    Avatar = "image.png",
+                    TypeDocument = TypesDocument.CedulaExtranjeria,
+                    Username = "pepitoyaki",
                     Cellphone = "+341341",
                     Email = "user@gmail.com",
                     Password = "ff",
