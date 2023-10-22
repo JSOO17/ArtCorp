@@ -17,6 +17,8 @@ public partial class Proposal
 
     public string Comment { get; set; } = null!;
 
+    public DateTime DateCreated { get; set; }
+
     public virtual User Client { get; set; } = null!;
 
     public virtual ICollection<Deal> Deals { get; set; } = new List<Deal>();

@@ -19,6 +19,8 @@ public partial class Deal
 
     public decimal Price { get; set; }
 
+    public DateTime DateUpdated { get; set; }
+
     public virtual User Artist { get; set; } = null!;
 
     public virtual User Client { get; set; } = null!;

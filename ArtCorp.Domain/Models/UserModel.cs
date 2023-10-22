@@ -23,5 +23,9 @@
         public string Cellphone { get; set; } = null!;
 
         public string Password { get; set; } = null!;
+
+        public DateTime DateCreated { get; set; }
+
+        public DateTime Birthday { get; set; }
     }
 }

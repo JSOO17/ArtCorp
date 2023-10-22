@@ -19,7 +19,11 @@ public partial class Post
 
     public int Border { get; set; }
 
-    public string? Description { get; set; }
+    public string Description { get; set; } = null!;
+
+    public DateTime DateCreated { get; set; }
+
+    public int State { get; set; }
 
     public virtual User Client { get; set; } = null!;
 

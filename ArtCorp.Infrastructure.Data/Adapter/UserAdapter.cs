@@ -1,6 +1,8 @@
 ﻿using ArtCorp.Domain.Interfaces.SPI;
 using ArtCorp.Domain.Models;
+using ArtCorp.Infrastructure.Data.Mappers;
 using ArtCorp.Infrastructure.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ArtCorp.Infrastructure.Data.Adapter
 {
@@ -22,9 +24,13 @@ namespace ArtCorp.Infrastructure.Data.Adapter
             throw new NotImplementedException();
         }
 
-        public Task<UserModel?> GetUser(string email)
+        public async Task<UserModel?> GetUser(string email)
         {
-            throw new NotImplementedException();
+            var user = await _context.Users
+                            .Where(user => user.Email == email)
+                            .FirstOrDefaultAsync();
+
+            return user == null ? null : UserMapper.ToUserModel(user);
         }
     }
 }

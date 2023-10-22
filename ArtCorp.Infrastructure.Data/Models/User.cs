@@ -17,15 +17,19 @@ public partial class User
 
     public string Document { get; set; } = null!;
 
+    public string Cellphone { get; set; } = null!;
+
     public int RoleId { get; set; }
 
     public string Avatar { get; set; } = null!;
 
     public string Email { get; set; } = null!;
 
-    public string Cellphone { get; set; } = null!;
-
     public string Password { get; set; } = null!;
+
+    public DateTime DateCreated { get; set; }
+
+    public DateTime Birthday { get; set; }
 
     public virtual ICollection<Deal> DealArtists { get; set; } = new List<Deal>();
 

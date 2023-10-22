@@ -3,7 +3,6 @@ using ArtCorp.Domain.Interfaces.API;
 using ArtCorp.Domain.Models;
 using ArtCorp.Domain.Utils;
 using Moq;
-using System.Reflection;
 
 namespace ArtCorp.Application.Tests.Services
 {
@@ -30,7 +29,9 @@ namespace ArtCorp.Application.Tests.Services
                     Cellphone = "+341341",
                     Email = "user@gmail.com",
                     Password = "ff",
-                    RoleId = 2
+                    RoleId = 2,
+                    Birthday = DateTime.Parse("2023-02-23"),
+                    DateCreated = DateTime.Parse("2023-10-23")
                 });
 
             var userReponse = await userServices.GetUser("pepito@gmail.com", "pass");
@@ -45,6 +46,9 @@ namespace ArtCorp.Application.Tests.Services
             Assert.AreEqual("user@gmail.com", userReponse.Email);
             Assert.AreEqual("ff", userReponse.Password);
             Assert.AreEqual(2, userReponse.RoleId);
+            Assert.AreEqual(DateTime.Parse("2023-02-23"), userReponse.Birthday);
+            Assert.AreEqual(DateTime.Parse("2023-10-23"), userReponse.DateCreated);
+
         }
     }
 }

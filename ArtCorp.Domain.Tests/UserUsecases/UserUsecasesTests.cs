@@ -39,7 +39,9 @@ namespace ArtCorp.Domain.Tests.UserUsecases
                     Cellphone = "+341341",
                     Email = "user@gmail.com",
                     Password = "ff",
-                    RoleId = 2
+                    RoleId = 2,
+                    Birthday = DateTime.Parse("2023-02-23"),
+                    DateCreated = DateTime.Parse("2023-10-23")
                 });
 
             var useCases = new Usecases.UserUsecases(mockUserPersistence.Object, mockUserEncrypt.Object);
@@ -56,6 +58,8 @@ namespace ArtCorp.Domain.Tests.UserUsecases
             Assert.AreEqual("user@gmail.com", model.Email);
             Assert.AreEqual("ff", model.Password);
             Assert.AreEqual(2, model.RoleId);
+            Assert.AreEqual(DateTime.Parse("2023-02-23"), model.Birthday);
+            Assert.AreEqual(DateTime.Parse("2023-10-23"), model.DateCreated);
         }
 
         [TestMethod]

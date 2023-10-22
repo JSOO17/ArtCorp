@@ -35,6 +35,8 @@ namespace ArtCorp.Infrastructure.Data.Tests
                }
             });
 
+            await context.SaveChangesAsync();
+
             await context.Users.AddRangeAsync(new List<User>()
             {
                 new User
@@ -48,6 +50,8 @@ namespace ArtCorp.Infrastructure.Data.Tests
                     Avatar = "img.png",
                     Cellphone = "+12313",
                     Password = "volcano",
+                    DateCreated = DateTime.Parse("2023-10-23"),
+                    Birthday = DateTime.Parse("2023-02-23"),
                     RoleId = 1
                 },
                  new User
@@ -61,6 +65,8 @@ namespace ArtCorp.Infrastructure.Data.Tests
                     Avatar = "img.png",
                     Cellphone = "+12313333",
                     Password = "fajgrnvia",
+                    Birthday = DateTime.Parse("2023-04-15"),
+                    DateCreated = DateTime.Parse("2023-02-23"),
                     RoleId = 1
                 }
             });
