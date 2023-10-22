@@ -15,7 +15,7 @@ namespace ArtCorp.Infrastructure.Data.Tests.Adapter
         }
 
         [TestMethod]
-        public async void GetUserSuccessfull()
+        public async Task GetUserSuccessfull()
         {
             await DbContextPrepare.SeedDatabase(_context);
 
@@ -25,8 +25,8 @@ namespace ArtCorp.Infrastructure.Data.Tests.Adapter
 
             Assert.IsNotNull(user);
             Assert.AreEqual(1, user.Id);
-            Assert.AreEqual("Pepito", user.Names);
-            Assert.AreEqual("Perezz", user.Lastnames);
+            Assert.AreEqual("Yunenfi", user.Names);
+            Assert.AreEqual("Duran", user.Lastnames);
             Assert.AreEqual("Takoyaki", user.Username);
             Assert.AreEqual("takoyaki@gmail.com", user.Email);
             Assert.AreEqual("volcano", user.Password);
@@ -34,11 +34,13 @@ namespace ArtCorp.Infrastructure.Data.Tests.Adapter
             Assert.AreEqual(TypesDocument.Cedula, user.TypeDocument);
             Assert.AreEqual("img.png", user.Avatar);
             Assert.AreEqual("341331", user.Document);
-            Assert.AreEqual(2, user.RoleId);
+            Assert.AreEqual(DateTime.Parse("2023-02-23"), user.Birthday);
+            Assert.AreEqual(DateTime.Parse("2023-10-23"), user.DateCreated);
+            Assert.AreEqual(1, user.RoleId);
         }
 
         [TestMethod]
-        public async void GetUserNull()
+        public async Task GetUserNull()
         {
             await DbContextPrepare.SeedDatabase(_context);
 
